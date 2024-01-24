@@ -1,4 +1,4 @@
-# Fake News Detection
+# VerifEye
 
 Fake News Detection in Python
 
@@ -123,7 +123,7 @@ A step by step series of examples that tell you have to get a development env ru
 
 1. The first step would be to clone this repo in a folder in your local machine. To do that you need to run following command in command prompt or in git bash
 ```
-$ git clone https://github.com/nishitpatel01/Fake_News_Detection.git
+$ https://github.com/vinod-polinati/VerifEye.git
 ```
 
 2. This will copy all the data source file, program files and model into your machine.
@@ -141,31 +141,4 @@ $ git clone https://github.com/nishitpatel01/Fake_News_Detection.git
      - After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you paste or type news headline, then press enter.
 
      - Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". Along with classifying the news headline, model will also provide a probability of truth associated with it.
-
-4.  If you have chosen to install python (and did not set up PATH variable for it) then follow below instructions:
-    - After you clone the project in a folder in your machine. Open command prompt and change the directory to project directory by running below command.
-    ```
-    cd C:/your cloned project folder path goes here/
-    ```
-    - Locate ```python.exe``` in your machine. you can search this in window explorer search bar. 
-    - Once you locate the ```python.exe``` path, you need to write whole path of it and then entire path of project folder with ```prediction.py``` at the end. For example if your ```python.exe``` is located at ```c:/Python36/python.exe``` and project folder is at ```c:/users/user_name/desktop/fake_news_detection/```, then your command to run program will be as below:
-    ```
-    c:/Python36/python.exe C:/users/user_name/desktop/fake_news_detection/prediction.py
-    ```
-    - After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you paste or type news headline, then press enter.
-
-    - Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". Along with classifying the news headline, model will also provide a probability of truth associated with it. It might take few seconds for model to classify the given statement so wait for it.
-
-5.  If you have chosen to install python (and already setup PATH variable for ```python.exe```) then follow instructions:
-    - Open the command prompt and change the directory to project folder as mentioned in above by running below command
-    ```
-    cd C:/your cloned project folder path goes here/
-    ```
-    - run below command
-    ```
-    python.exe C:/your cloned project folder path goes here/
-    ```
-    - After hitting the enter, program will ask for an input which will be a piece of information or a news headline that you 	    	   want to verify. Once you paste or type news headline, then press enter.
-
-    - Once you hit the enter, program will take user input (news headline) and will be used by model to classify in one of  categories of "True" and "False". Along with classifying the news headline, model will also provide a probability of truth associated with it.
 
