@@ -45,7 +45,6 @@ if selected_page == "Home":
 
             # Display results
             st.write(f'The given statement is: {prediction}')
-            st.write(f'The truth probability score is: {probability}')
 
 elif selected_page == "About Us":
     st.snow()
