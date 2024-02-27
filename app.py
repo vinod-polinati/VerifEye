@@ -12,7 +12,7 @@ with open('final_model.sav', 'rb') as file:
 rockimage_path = 'data/rock.png'
 st.sidebar.image(rockimage_path, use_column_width=True)
 
-selected_page = st.sidebar.radio("", ["Home", "About Us", "Contact Us"])
+selected_page = st.sidebar.radio("", ["Home", "Contact Us"])
 if selected_page == "Home":
     st.balloons()
     st.markdown("""
