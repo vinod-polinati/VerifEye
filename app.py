@@ -1,18 +1,19 @@
 import streamlit as st
 import pickle
-from sklearn.linear_model import LogisticRegression
+import requests
 import warnings
-
+# Disable a specific UserWarning
 warnings.filterwarnings("ignore", message="`label` got an empty value", category=UserWarning)
 
 # Load the model
-
 with open('final_model.sav', 'rb') as file:
     load_model = pickle.load(file)
+
 rockimage_path = 'data/rock.png'
 st.sidebar.image(rockimage_path, use_column_width=True)
 
 selected_page = st.sidebar.radio("", ["Home", "Contact Us"])
+
 if selected_page == "Home":
     st.balloons()
     st.markdown("""
@@ -33,16 +34,13 @@ if selected_page == "Home":
         return prediction[0], prob[0][1]
 
     # Streamlit app
-
     # User input
     var = st.text_area('Enter the news text you want to verify:')
     if st.button('Verify News'):
         if var:
             st.write(f'You entered: {var}')
-
             # Run prediction
             prediction, probability = detecting_fake_news(var)
-
             # Display results
             st.write(f'The given statement is: {prediction}')
 
@@ -59,10 +57,29 @@ elif selected_page == "About Us":
 elif selected_page == "Contact Us":
     st.title("Contact Us")
     st.write("Please fill out the form below to get in touch with us.")
-    with st.form("contact_form"):
-        name = st.text_input("Name")
-        email = st.text_input("Email")
-        message = st.text_area("Message")
-        submit = st.form_submit_button("Submit")
-        if submit:
-            st.write(f"Thank you, {name}! We will get back to you at {email} as soon as possible.")
+
+    # User input for the form
+    name = st.text_input('Your Name:')
+    email = st.text_input('Your Email:')
+    message = st.text_area('Your Message:')
+
+    # Button to submit the form
+    if st.button('Submit'):
+        # FormSubmit endpoint
+        form_submit_url = "https://formsubmit.co/86ad5b91559924c3b8a71d29d53bb2ad"  # Replace with your email
+
+        # Data to be sent to FormSubmit
+        form_data = {
+            'name': name,
+            'email': email,
+            'message': message
+        }
+
+        # Make a POST request to FormSubmit
+        response = requests.post(form_submit_url, data=form_data)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            st.success('Form submitted successfully!')
+        else:
+            st.error('Failed to submit the form. Please try again.')
